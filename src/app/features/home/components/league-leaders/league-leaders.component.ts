@@ -1,22 +1,34 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { LeagueLeader } from '../../entities/home.entities';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-league-leaders',
   template: `
-    <div class="flex flex-col gap-1">
-      @for (leagueLeader of leagueLeaders; track $index) {
       <ion-card class="ion-padding m-0">
-        <div>{{ leagueLeader.PLAYER }}</div>
-        <div class=" text-lg font-semibold">{{ leagueLeader.PTS }}</div>
+        <h6 class=" text-lg font-semibold mb-2">
+          {{ title() }}
+        </h6>
+        <table>
+          @for (leagueLeader of leagueLeaders(); track $index) {
+          <tr>
+            <td>{{$index + 1}}.</td>
+            <td class="px-2 w-full">
+              {{ leagueLeader.PLAYER }}
+            </td>
+            <td class="px-2 text-lg font-semibold text-right">
+              {{ leagueLeader[category()] }}
+            </td>
+          </tr>
+          }
+        </table>
       </ion-card>
-      }
-    </div>
   `,
   standalone: true,
   imports: [IonicModule],
 })
 export class LeagueLeadersComponent {
-  @Input() leagueLeaders: LeagueLeader[] = [];
+  title = input<string>('');
+  category = input<keyof LeagueLeader>('PTS')
+  leagueLeaders = input.required<LeagueLeader[]>();
 }

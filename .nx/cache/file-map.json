@@ -1,15 +1,15 @@
 {
   "version": "6.0",
-  "nxVersion": "17.1.2",
+  "nxVersion": "17.2.8",
   "deps": {
-    "@angular/animations": "^17.0.2",
-    "@angular/common": "^17.0.2",
-    "@angular/compiler": "^17.0.2",
-    "@angular/core": "^17.0.2",
-    "@angular/forms": "^17.0.2",
-    "@angular/platform-browser": "^17.0.2",
-    "@angular/platform-browser-dynamic": "^17.0.2",
-    "@angular/router": "^17.0.2",
+    "@angular/animations": "^17.1.0",
+    "@angular/common": "^17.1.0",
+    "@angular/compiler": "^17.1.0",
+    "@angular/core": "^17.1.0",
+    "@angular/forms": "^17.1.0",
+    "@angular/platform-browser": "^17.1.0",
+    "@angular/platform-browser-dynamic": "^17.1.0",
+    "@angular/router": "^17.1.0",
     "@capacitor/app": "5.0.6",
     "@capacitor/core": "5.5.1",
     "@capacitor/haptics": "5.0.6",
@@ -22,15 +22,15 @@
     "swiper": "^11.0.5",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2",
-    "@angular-devkit/build-angular": "^17.0.0",
-    "@angular-eslint/builder": "^17.0.0",
-    "@angular-eslint/eslint-plugin": "^17.0.0",
-    "@angular-eslint/eslint-plugin-template": "^17.0.0",
-    "@angular-eslint/schematics": "^17.0.0",
-    "@angular-eslint/template-parser": "^17.0.0",
-    "@angular/cli": "^17.0.0",
-    "@angular/compiler-cli": "^17.0.2",
-    "@angular/language-service": "^17.0.2",
+    "@angular-devkit/build-angular": "^17.1.0",
+    "@angular-eslint/builder": "^17.2.0",
+    "@angular-eslint/eslint-plugin": "^17.2.0",
+    "@angular-eslint/eslint-plugin-template": "^17.2.0",
+    "@angular-eslint/schematics": "^17.2.0",
+    "@angular-eslint/template-parser": "^17.2.0",
+    "@angular/cli": "^17.1.0",
+    "@angular/compiler-cli": "^17.1.0",
+    "@angular/language-service": "^17.1.0",
     "@capacitor/cli": "5.5.1",
     "@ionic/angular-toolkit": "^9.0.0",
     "@types/jasmine": "~5.1.0",
@@ -75,58 +75,6 @@
         "hash": "91109559695469517"
       },
       {
-        "file": ".nx/cache/file-map.json",
-        "hash": "9433947343060507514"
-      },
-      {
-        "file": ".nx/cache/lockfile.hash",
-        "hash": "8721317158216240796"
-      },
-      {
-        "file": ".nx/cache/nx-console-project-graph/project-graph.html",
-        "hash": "17036869540637447991"
-      },
-      {
-        "file": ".nx/cache/nx-console-project-graph/static/3rdpartylicenses.txt",
-        "hash": "5667550289807473445"
-      },
-      {
-        "file": ".nx/cache/nx-console-project-graph/static/environment.js",
-        "hash": "5018250891076049163"
-      },
-      {
-        "file": ".nx/cache/nx-console-project-graph/static/favicon.ico",
-        "hash": "9303420814833116677"
-      },
-      {
-        "file": ".nx/cache/nx-console-project-graph/static/main.js",
-        "hash": "11366588937091843483"
-      },
-      {
-        "file": ".nx/cache/nx-console-project-graph/static/polyfills.js",
-        "hash": "2110773196768975388"
-      },
-      {
-        "file": ".nx/cache/nx-console-project-graph/static/runtime.js",
-        "hash": "9652903316845995179"
-      },
-      {
-        "file": ".nx/cache/nx-console-project-graph/static/styles.css",
-        "hash": "5562174198026097626"
-      },
-      {
-        "file": ".nx/cache/nx-console-project-graph/static/styles.js",
-        "hash": "13596360365094399219"
-      },
-      {
-        "file": ".nx/cache/parsed-lock-file.json",
-        "hash": "12615650077421986900"
-      },
-      {
-        "file": ".nx/cache/project-graph.json",
-        "hash": "404031940286214196"
-      },
-      {
         "file": ".vscode/extensions.json",
         "hash": "592272277800690021"
       },
@@ -152,11 +100,11 @@
       },
       {
         "file": "package-lock.json",
-        "hash": "7848490660969575895"
+        "hash": "17771234647905249198"
       },
       {
         "file": "package.json",
-        "hash": "13767628101796898582"
+        "hash": "11146610634770765463"
       },
       {
         "file": "src/app/app.component.html",
@@ -179,12 +127,20 @@
         "hash": "9181679247696792698"
       },
       {
+        "file": "src/app/features/home/components/league-leaders/league-leaders.component.spec.ts",
+        "hash": "2728732479350343212"
+      },
+      {
+        "file": "src/app/features/home/components/league-leaders/league-leaders.component.ts",
+        "hash": "2760488497278726792"
+      },
+      {
         "file": "src/app/features/home/components/scoreboard-item/scoreboard-item.component.spec.ts",
         "hash": "1279236056237349247"
       },
       {
         "file": "src/app/features/home/components/scoreboard-item/scoreboard-item.component.ts",
-        "hash": "6067793153473417180"
+        "hash": "7934499344885914286"
       },
       {
         "file": "src/app/features/home/components/scoreboard-list/scoreboard-list.component.spec.ts",
@@ -192,7 +148,7 @@
       },
       {
         "file": "src/app/features/home/components/scoreboard-list/scoreboard-list.component.ts",
-        "hash": "9810221313195714549"
+        "hash": "5951982375453512790"
       },
       {
         "file": "src/app/features/home/components/scoreboard-team/scoreboard-team.component.spec.ts",
@@ -200,11 +156,11 @@
       },
       {
         "file": "src/app/features/home/components/scoreboard-team/scoreboard-team.component.ts",
-        "hash": "14553089571800107006"
+        "hash": "10827552018150587590"
       },
       {
         "file": "src/app/features/home/entities/home.entities.ts",
-        "hash": "6856950489761787416"
+        "hash": "7231314185269987167"
       },
       {
         "file": "src/app/features/home/pages/home/home.page.spec.ts",
@@ -212,7 +168,7 @@
       },
       {
         "file": "src/app/features/home/pages/home/home.page.ts",
-        "hash": "5472381122361264026"
+        "hash": "11335906196649447339"
       },
       {
         "file": "src/app/features/home/services/home.service.spec.ts",
@@ -220,15 +176,79 @@
       },
       {
         "file": "src/app/features/home/services/home.service.ts",
-        "hash": "7154916480519251495"
+        "hash": "3723486137522409997"
       },
       {
-        "file": "src/app/shared/tabs/tabs.page.html",
-        "hash": "3090907565607903010"
+        "file": "src/app/features/players/entities/players.entities.ts",
+        "hash": "3244421341483603138"
       },
       {
-        "file": "src/app/shared/tabs/tabs.page.scss",
-        "hash": "4055606894390288348"
+        "file": "src/app/features/teams/components/team-list/team-list.component.spec.ts",
+        "hash": "12552750157605317916"
+      },
+      {
+        "file": "src/app/features/teams/components/team-list/team-list.component.ts",
+        "hash": "15480086647749532965"
+      },
+      {
+        "file": "src/app/features/teams/entities/team.entities.ts",
+        "hash": "678057518076038637"
+      },
+      {
+        "file": "src/app/features/teams/pages/team-detail/team-detail.page.spec.ts",
+        "hash": "4093617591098376396"
+      },
+      {
+        "file": "src/app/features/teams/pages/team-detail/team-detail.page.ts",
+        "hash": "8354784593350894556"
+      },
+      {
+        "file": "src/app/features/teams/pages/team/team.page.spec.ts",
+        "hash": "17791971523958554458"
+      },
+      {
+        "file": "src/app/features/teams/pages/team/team.page.ts",
+        "hash": "8045577104284270776"
+      },
+      {
+        "file": "src/app/features/teams/services/team.service.spec.ts",
+        "hash": "9713411624234062968"
+      },
+      {
+        "file": "src/app/features/teams/services/team.service.ts",
+        "hash": "8888799897694374725"
+      },
+      {
+        "file": "src/app/shared/components/header/header.component.spec.ts",
+        "hash": "15942973713125930543"
+      },
+      {
+        "file": "src/app/shared/components/header/header.component.ts",
+        "hash": "2057599051895890395"
+      },
+      {
+        "file": "src/app/shared/components/logo/logo.component.spec.ts",
+        "hash": "18115329692902238464"
+      },
+      {
+        "file": "src/app/shared/components/logo/logo.component.ts",
+        "hash": "13413099153092594342"
+      },
+      {
+        "file": "src/app/shared/directives/swiper.directive.spec.ts",
+        "hash": "14439420978069593927"
+      },
+      {
+        "file": "src/app/shared/directives/swiper.directive.ts",
+        "hash": "7250302097216649990"
+      },
+      {
+        "file": "src/app/shared/pipes/playing-time.pipe.spec.ts",
+        "hash": "5912077021229277317"
+      },
+      {
+        "file": "src/app/shared/pipes/playing-time.pipe.ts",
+        "hash": "13200721797084242203"
       },
       {
         "file": "src/app/shared/tabs/tabs.page.spec.ts",
@@ -236,11 +256,11 @@
       },
       {
         "file": "src/app/shared/tabs/tabs.page.ts",
-        "hash": "1949349525049344554"
+        "hash": "11769074348264580995"
       },
       {
         "file": "src/app/shared/tabs/tabs.routes.ts",
-        "hash": "4835515736296700252"
+        "hash": "9044243509687265982"
       },
       {
         "file": "src/app/utils/logo/logo-helper.service.spec.ts",
@@ -252,7 +272,11 @@
       },
       {
         "file": "src/assets/icon/favicon.png",
-        "hash": "17482944836898362639"
+        "hash": "3652188573387105493"
+      },
+      {
+        "file": "src/assets/logo.png",
+        "hash": "3652188573387105493"
       },
       {
         "file": "src/assets/shapes.svg",
@@ -276,7 +300,7 @@
       },
       {
         "file": "src/main.ts",
-        "hash": "7937097963571362860"
+        "hash": "14090138568625685236"
       },
       {
         "file": "src/polyfills.ts",

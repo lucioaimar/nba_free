@@ -7,7 +7,6 @@ import {
   StatAbbreviation,
 } from '../entities/home.entities';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { options } from 'ionicons/icons';
 
 @Injectable({
   providedIn: 'root',

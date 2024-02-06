@@ -10,8 +10,8 @@ export interface Scoreboard {
 }
 
 export enum GameStatus {
-  NOT_STARTED = 0,
-  PREGAME = 1,
+  PREGAME = 0,
+  NOT_STARTED = 1,
   PLAYING = 2,
   FINAL = 3,
 }
@@ -19,13 +19,14 @@ export enum GameStatus {
 export interface TeamScoreboard {
   teamId: number;
   teamName: string;
-  logoUrl?: string;
   teamCity: string;
   teamTricode: string;
   wins: number;
   losses: number;
   score: number;
 }
+
+
 
 export enum StatAbbreviation {
   PTS = 'PTS',
