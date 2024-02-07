@@ -1,0 +1,7 @@
+{
+  "name": "free-nba",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

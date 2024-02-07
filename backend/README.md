@@ -1,0 +1,3 @@
+-- Home -> Scoreboard and League Leaders
+-- Players -> List and search with parameters. Player Detail
+-- Games -> Games with a scoreboard by day, you can filter for team and maybe other params. Game detail
