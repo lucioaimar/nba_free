@@ -49,7 +49,7 @@ export class TeamPage {
 
   teamList = computed(() => {
     const query = this.searchQuery().toLowerCase();
-    return this.teamService.allTeamsList().filter((team) => team.full_name.toLowerCase().includes(query))
+    return this.teamService.allTeamsList().filter((team) => team.fullName.toLowerCase().includes(query))
   })
 
   updateQuery(query: string){

@@ -16,11 +16,11 @@ import { RouterLink } from '@angular/router';
         <div class="flex gap-4 items-center">
           <app-logo
             [teamId]="team.id.toString()"
-            [teamName]="team.full_name"
+            [teamName]="team.fullName"
             [height]="50"
             [width]="50"
           />
-          <h4 class="text-xl font-semibold">{{ team.full_name }}</h4>
+          <h4 class="text-xl font-semibold">{{ team.fullName }}</h4>
         </div>
       </ion-card>
       }

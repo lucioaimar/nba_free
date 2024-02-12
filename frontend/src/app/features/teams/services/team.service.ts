@@ -11,7 +11,7 @@ export class TeamService {
   private http = inject(HttpClient);
 
   $allTeamsList: Observable<TeamSimple[]> = this.http.get<TeamSimple[]>(
-    `http://localhost:8000/get_all_teams`
+    `http://localhost:8000/team/get_all`
   );
 
   allTeamsList = toSignal(this.$allTeamsList, {
@@ -21,7 +21,7 @@ export class TeamService {
   getTeam(teamId: number): Observable<TeamInfo> {
     const params = new HttpParams().set('team_id', teamId);
 
-    return this.http.get<TeamInfo>(`http://localhost:8000/get_team_by_id`, {
+    return this.http.get<TeamInfo>(`http://localhost:8000/team/get_by_id`, {
       params,
     });
   }

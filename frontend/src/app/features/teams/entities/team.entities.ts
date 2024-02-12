@@ -1,11 +1,11 @@
 export interface TeamSimple {
   id: number;
-  full_name: string;
+  fullName: string;
   abbreviation: string;
   nickname: string;
   city: string;
   state: string;
-  year_founded: number;
+  yearFounded: number;
 }
 
 export interface TeamInfo {

@@ -77,3 +77,130 @@ export interface LeagueLeader {
   AST_TOV: number;
   STL_TOV: number;
 }
+
+export interface Boxscore {
+  gameId: string
+  gameTimeLocal: string
+  gameTimeUTC: string
+  gameTimeHome: string
+  gameTimeAway: string
+  gameEt: string
+  duration: number
+  gameCode: string
+  gameStatusText: string
+  gameStatus: number
+  regulationPeriods: number
+  period: number
+  gameClock: string
+  attendance: number
+  sellout: string
+  arena: Arena
+  officials: Official[]
+  homeTeam: HomeTeam
+  awayTeam: AwayTeam
+}
+
+export interface Arena {
+  arenaId: number
+  arenaName: string
+  arenaCity: string
+  arenaState: string
+  arenaCountry: string
+  arenaTimezone: string
+}
+
+export interface Official {
+  personId: number
+  name: string
+  nameI: string
+  firstName: string
+  familyName: string
+  jerseyNum: string
+  assignment: string
+}
+
+export interface HomeTeam {
+  teamId: number
+  teamName: string
+  teamCity: string
+  teamTricode: string
+  score: number
+  inBonus: string
+  timeoutsRemaining: number
+  periods: Period[]
+  players: Player[]
+  statistics: Statistics
+}
+
+export interface Period {
+  period: number
+  periodType: string
+  score: number
+}
+
+export interface Player {
+  status: string
+  order: number
+  personId: number
+  jerseyNum: string
+  position?: string
+  starter: string
+  oncourt: string
+  played: string
+  statistics: Statistics
+  name: string
+  nameI: string
+  firstName: string
+  familyName: string
+  notPlayingReason?: string
+  notPlayingDescription?: string
+}
+
+export interface Statistics {
+  assists: number
+  blocks: number
+  blocksReceived: number
+  fieldGoalsAttempted: number
+  fieldGoalsMade: number
+  fieldGoalsPercentage: number
+  foulsOffensive: number
+  foulsDrawn: number
+  foulsPersonal: number
+  foulsTechnical: number
+  freeThrowsAttempted: number
+  freeThrowsMade: number
+  freeThrowsPercentage: number
+  minus: number
+  minutes: string
+  minutesCalculated: string
+  plus: number
+  plusMinusPoints: number
+  points: number
+  pointsFastBreak: number
+  pointsInThePaint: number
+  pointsSecondChance: number
+  reboundsDefensive: number
+  reboundsOffensive: number
+  reboundsTotal: number
+  steals: number
+  threePointersAttempted: number
+  threePointersMade: number
+  threePointersPercentage: number
+  turnovers: number
+  twoPointersAttempted: number
+  twoPointersMade: number
+  twoPointersPercentage: number
+}
+
+export interface AwayTeam {
+  teamId: number
+  teamName: string
+  teamCity: string
+  teamTricode: string
+  score: number
+  inBonus: string
+  timeoutsRemaining: number
+  periods: Period[]
+  players: Player[]
+  statistics: Statistics
+}
