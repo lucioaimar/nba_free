@@ -14,6 +14,13 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'home/boxscore/:id',
+        loadComponent: () =>
+          import('../../features/home/pages/boxscore/boxscore.page').then(
+            (m) => m.BoxscorePage
+          ),
+      },
+      {
         path: 'team',
         loadComponent: () =>
           import('../../features/teams/pages/team/team.page').then(
@@ -26,13 +33,6 @@ export const routes: Routes = [
           import(
             '../../features/teams/pages/team-detail/team-detail.page'
           ).then((m) => m.TeamDetailPage),
-      },
-      {
-        path: 'team',
-        loadComponent: () =>
-          import('../../features/teams/pages/team/team.page').then(
-            (m) => m.TeamPage
-          ),
       },
     ],
   },

@@ -15,11 +15,12 @@ import { DatePipe } from '@angular/common';
 import { LogoHelperService } from 'src/app/utils/logo/logo-helper.service';
 import { ScoreboardTeamComponent } from '../scoreboard-team/scoreboard-team.component';
 import { PlayingTimePipe } from 'src/app/shared/pipes/playing-time.pipe';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-scoreboard-item',
   template: `
-    <ion-card class="ion-padding m-0 h-44">
+    <ion-card class="ion-padding m-0 h-44" [routerLink]="['boxscore', scoreboard().gameId]">
       <header class="mb-2">
         @switch (scoreboard().gameStatus) {
           @case (gameStatus.NOT_STARTED) {
@@ -42,7 +43,7 @@ import { PlayingTimePipe } from 'src/app/shared/pipes/playing-time.pipe';
     </ion-card>
   `,
   standalone: true,
-  imports: [IonicModule, ScoreboardTeamComponent, PlayingTimePipe, DatePipe],
+  imports: [IonicModule, ScoreboardTeamComponent, PlayingTimePipe, DatePipe, RouterLink],
 })
 export class ScoreboardItemComponent {
 

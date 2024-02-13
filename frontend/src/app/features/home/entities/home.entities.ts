@@ -81,14 +81,14 @@ export interface LeagueLeader {
 export interface Boxscore {
   gameId: string
   gameTimeLocal: string
-  gameTimeUTC: string
+  gameTimeUtc: string
   gameTimeHome: string
   gameTimeAway: string
   gameEt: string
   duration: number
   gameCode: string
   gameStatusText: string
-  gameStatus: number
+  gameStatus: GameStatus
   regulationPeriods: number
   period: number
   gameClock: string
