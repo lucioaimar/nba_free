@@ -1,3 +1,4 @@
+from src.models.team_model import TeamCommon, TeamDetails
 from fastapi import APIRouter
 from src.services import team_service
 
@@ -12,11 +13,13 @@ async def get_all_teams():
     return await team_service.get_all_teams()
 
 
-@router.get("/get_by_id")
+@router.get("/get_by_id", response_model=TeamCommon)
 async def get_team_by_id(team_id: str):
-    return await team_service.get_team_by_id(team_id)
+    team = await team_service.get_team_by_id(team_id)
+    return team.model_dump(by_alias=True)
 
 
-@router.get("/get_details")
+@router.get("/get_details", response_model=TeamDetails)
 async def get_team_details(team_id: str):
-    return await team_service.get_team_details(team_id)
+    team_details = await team_service.get_team_details(team_id)
+    return team_details.model_dump(by_alias=True)

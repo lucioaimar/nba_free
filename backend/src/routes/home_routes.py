@@ -1,7 +1,6 @@
 from typing import List
 from fastapi import APIRouter
-from pydantic import TypeAdapter
-from src.models.home_model import GameScoreboard
+from src.models.home_model import GameScoreboardList
 from src.services.home_service import get_scoreboard_games, get_boxscore, get_league_leaders
 
 router = APIRouter(
@@ -10,17 +9,16 @@ router = APIRouter(
 )
 
 
-@router.get("/scoreboard")
+@router.get("/scoreboard", response_model=GameScoreboardList)
 async def get_scoreboard():
     games = get_scoreboard_games()
-    validated_games = TypeAdapter(
-        List[GameScoreboard]).validate_json(games.get_json())
-    return validated_games
+    return games.model_dump(by_alias=True)
 
 
 @router.get("/boxscore")
 async def boxscore_by_game(game_id: str):
-    return get_boxscore(game_id)
+    boxscore = get_boxscore(game_id)
+    return boxscore.model_dump(by_alias=True)
 
 
 @router.get("/league_leaders")

@@ -2,19 +2,22 @@ from typing import List
 from nba_api.live.nba.endpoints.scoreboard import ScoreBoard 
 from nba_api.live.nba.endpoints.boxscore import BoxScore 
 from nba_api.stats.endpoints.leagueleaders import LeagueLeaders
-from pydantic import TypeAdapter
+from humps import decamelize
 
-from src.models.home_model import GameScoreboard, StatCategoryAbbreviation
+from src.models.home_model import GameScoreboardList, StatCategoryAbbreviation, BoxscoreModel
 
 
-def get_scoreboard_games():
-    return ScoreBoard().games
+def get_scoreboard_games() -> GameScoreboardList:
+    games = decamelize(ScoreBoard().games.get_dict())
+    scoreboard = GameScoreboardList(games)
+    return scoreboard
 
 
 def get_boxscore(game_id: str):
-    boxscore = BoxScore(game_id)
-    print(boxscore.game.data);
-    return boxscore.game.data
+    boxscore = decamelize(BoxScore(game_id).game.data)
+    print(boxscore)
+    boxscore_model = BoxscoreModel(**boxscore)
+    return boxscore_model
 
 
 def get_league_leaders(stat_category: StatCategoryAbbreviation, top: int,
