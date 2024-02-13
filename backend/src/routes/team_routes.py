@@ -1,4 +1,4 @@
-from src.models.team_model import TeamCommon, TeamDetails
+from src.models.team_model import TeamCommon, TeamDetailsModel
 from fastapi import APIRouter
 from src.services import team_service
 
@@ -19,7 +19,7 @@ async def get_team_by_id(team_id: str):
     return team.model_dump(by_alias=True)
 
 
-@router.get("/get_details", response_model=TeamDetails)
+@router.get("/get_details", response_model=TeamDetailsModel)
 async def get_team_details(team_id: str):
     team_details = await team_service.get_team_details(team_id)
     return team_details.model_dump(by_alias=True)

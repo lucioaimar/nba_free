@@ -87,13 +87,13 @@ class TeamRetiredItem(CamelModel):
     YEAR: Optional[int]
 
 
-class TeamDetails(CamelModel):
-    TeamBackground: List[TeamBackgroundItem]
-    TeamHistory: List[TeamHistoryItem]
-    TeamSocialSites: List[TeamSocialSite]
-    TeamAwardsChampionships: List[TeamAwardsChampionship]
-    TeamAwardsConf: List
-    TeamAwardsDiv: List[TeamAwardsDivItem]
-    TeamHof: List[TeamHofItem]
-    TeamRetired: List[TeamRetiredItem]
+class TeamDetailsModel(CamelModel):
+    team_background: List[TeamBackgroundItem]
+    team_history: List[TeamHistoryItem]
+    team_social_sites: List[TeamSocialSite]
+    team_awards_championships: List[TeamAwardsChampionship]
+    team_awards_conf: List
+    team_awards_div: List[TeamAwardsDivItem]
+    team_hof: List[TeamHofItem]
+    team_retired: List[TeamRetiredItem]
 

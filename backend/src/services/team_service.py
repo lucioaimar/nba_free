@@ -2,20 +2,23 @@ from http.client import HTTPException
 from typing import List
 from src.models.camelize import CamelModel
 from pydantic import TypeAdapter
-from nba_api.stats.endpoints import teaminfocommon, teamdetails
+from nba_api.stats.endpoints.teamdetails import TeamDetails
+from nba_api.stats.endpoints.teaminfocommon import TeamInfoCommon
 from nba_api.stats.static import teams
+from humps import depascalize
 
-from src.models.team_model import TeamCommon, TeamSimple, TeamDetails
+from src.models.team_model import TeamCommon, TeamDetailsModel, TeamSimple
 
 
 async def get_team_details(team_id: str) -> TeamDetails:
-    team_details = teamdetails.TeamDetails(team_id).get_normalized_dict()
-    team_model = TeamDetails(**team_details)
+    team_details = depascalize(TeamDetails(team_id).get_normalized_dict())
+    print(team_details)
+    team_model = TeamDetailsModel(**team_details)
     return team_model
 
 
 async def get_team_by_id(team_id: str) -> TeamCommon:
-    team = teaminfocommon.TeamInfoCommon(team_id).get_normalized_dict()[
+    team = TeamInfoCommon(team_id).get_normalized_dict()[
         'TeamInfoCommon'][0]
     if(team):
         return TeamCommon(**team)
