@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Observable } from 'rxjs';
-import { TeamInfo, TeamSimple } from '../entities/team.entities';
+import { TeamDetails, TeamInfo, TeamSimple } from '../entities/team.entities';
 
 @Injectable({
   providedIn: 'root',
@@ -18,10 +18,18 @@ export class TeamService {
     initialValue: [] as TeamSimple[],
   });
 
-  getTeam(teamId: number): Observable<TeamInfo> {
+  getTeam(teamId: string): Observable<TeamInfo> {
     const params = new HttpParams().set('team_id', teamId);
 
     return this.http.get<TeamInfo>(`http://localhost:8000/team/get_by_id`, {
+      params,
+    });
+  }
+
+  getTeamDetails(teamId: string): Observable<TeamDetails> {
+    const params = new HttpParams().set('team_id', teamId);
+
+    return this.http.get<TeamDetails>(`http://localhost:8000/team/get_details`, {
       params,
     });
   }
