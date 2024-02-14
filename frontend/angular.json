@@ -127,13 +127,22 @@
   },
   "cli": {
     "schematicCollections": [
-      "@ionic/angular-toolkit"
+      "@ionic/angular-toolkit",
+      "@schematics/angular"
     ],
     "analytics": false
   },
   "schematics": {
+    "@schematics/angular:component":{
+      "standalone": true,
+      "inlineStyle": true,
+      "inlineTemplate": true
+    },
     "@ionic/angular-toolkit:component": {
-      "styleext": "scss"
+      "styleext": "scss",
+      "standalone": true,
+      "inlineStyle": true,
+      "inlineTemplate": true
     },
     "@ionic/angular-toolkit:page": {
       "styleext": "scss"

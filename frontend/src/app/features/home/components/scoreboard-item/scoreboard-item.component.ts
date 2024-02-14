@@ -12,7 +12,6 @@ import {
 import { Scoreboard, GameStatus } from '../../entities/home.entities';
 import { IonicModule } from '@ionic/angular';
 import { DatePipe } from '@angular/common';
-import { LogoHelperService } from 'src/app/utils/logo/logo-helper.service';
 import { ScoreboardTeamComponent } from '../scoreboard-team/scoreboard-team.component';
 import { PlayingTimePipe } from 'src/app/shared/pipes/playing-time.pipe';
 import { RouterLink } from '@angular/router';
@@ -24,7 +23,7 @@ import { RouterLink } from '@angular/router';
       <header class="mb-2">
         @switch (scoreboard().gameStatus) {
           @case (gameStatus.NOT_STARTED) {
-            <span>{{ scoreboard().gameTimeUTC | date: "shortTime" }}</span>
+            <span>{{ scoreboard().gameTimeUtc | date: "shortTime" }}</span>
           }
           @case (gameStatus.PREGAME) {
             <span>PREGAME</span>

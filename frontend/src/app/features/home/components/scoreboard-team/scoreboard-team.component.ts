@@ -8,7 +8,7 @@ import { LogoComponent } from 'src/app/shared/components/logo/logo.component';
   template: `
     <div class="flex items-center justify-between">
         <div class="flex flex-col items-center w-10">
-          <app-logo [teamId]="team().teamId.toString()" [teamName]="team().teamName" [width]="24" [height]="24" />
+          <app-logo [teamId]="team().teamId" [teamName]="team().teamName" [width]="24" [height]="24" />
           <span class="text-xs whitespace-nowrap">
             {{ team().wins }} -
             {{ team().wins }}

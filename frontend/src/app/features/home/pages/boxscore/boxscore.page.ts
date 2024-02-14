@@ -20,27 +20,28 @@ import {
   switchMap,
 } from 'rxjs';
 import { HomeService } from '../../services/home.service';
-import { Boxscore, GameStatus, LeagueLeader } from '../../entities/home.entities';
+import { Boxscore, GameStatus } from '../../entities/home.entities';
 import { HeaderComponent } from 'src/app/shared/components/header/header.component';
+import { VersusComponent } from '../../components/versus/versus.component';
 
 @Component({
   selector: 'app-boxscore',
   template: `
-    <app-header title="Home"></app-header>
-    <ion-content class="ion-padding gap-5">
+    <app-header title="Boxscore"></app-header>
+    <ion-content class="gap-5">
       @if(boxscore(); as boxscore){
-        <div>{{boxscore.arena}}</div>
-        <div>{{boxscore.homeTeam.teamName}}</div>
-        <div>{{boxscore.homeTeam.score}}</div>
+        <app-versus [homeTeam]="boxscore.homeTeam" [awayTeam]="boxscore.awayTeam" [isGameActive]="boxscore.gameStatus === gameStatus.PLAYING"/>
       }
     </ion-content>
   `,
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, HeaderComponent],
+  imports: [IonicModule, CommonModule, FormsModule, HeaderComponent, VersusComponent],
 })
 export class BoxscorePage {
   private activatedRoute = inject(ActivatedRoute);
   private homeService = inject(HomeService);
+
+  gameStatus = GameStatus
 
   gameId = this.activatedRoute.snapshot.paramMap.get('id');
 

@@ -7,7 +7,13 @@ import {
   IonLabel,
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { homeOutline, basketballOutline } from 'ionicons/icons';
+import {
+  homeOutline,
+  basketballOutline,
+  podiumOutline,
+  bodyOutline,
+  peopleOutline,
+} from 'ionicons/icons';
 
 @Component({
   selector: 'app-tabs',
@@ -19,7 +25,19 @@ import { homeOutline, basketballOutline } from 'ionicons/icons';
       </ion-tab-button>
       <ion-tab-button tab="team" href="/tabs/team">
         <ion-icon aria-hidden="true" name="basketball-outline"></ion-icon>
+        <ion-label>Games</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="team" href="/tabs/team">
+        <ion-icon name="people-outline"></ion-icon>
         <ion-label>Teams</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="players">
+        <ion-icon name="body-outline"></ion-icon>
+        <ion-label>Players</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="standing">
+        <ion-icon name="podium-outline"></ion-icon>
+        <ion-label>Standings</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs> `,
@@ -30,6 +48,12 @@ export class TabsPage {
   public environmentInjector = inject(EnvironmentInjector);
 
   constructor() {
-    addIcons({ homeOutline, basketballOutline });
+    addIcons({
+      homeOutline,
+      basketballOutline,
+      podiumOutline,
+      bodyOutline,
+      peopleOutline,
+    });
   }
 }

@@ -198,7 +198,7 @@ class StatisticsTeam(CamelModel):
 
 
 class BoxTeam(CamelModel):
-    team_id: int
+    team_id: str
     team_name: str
     team_city: str
     team_tricode: str

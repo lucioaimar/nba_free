@@ -3,7 +3,7 @@ export interface Scoreboard {
   gameStatus: GameStatus;
   period: number;
   gameClock: string;
-  gameTimeUTC: Date;
+  gameTimeUtc: Date;
   regulationPeriods: number;
   homeTeam: TeamScoreboard;
   awayTeam: TeamScoreboard;
@@ -17,7 +17,7 @@ export enum GameStatus {
 }
 
 export interface TeamScoreboard {
-  teamId: number;
+  teamId: string;
   teamName: string;
   teamCity: string;
   teamTricode: string;
@@ -25,8 +25,6 @@ export interface TeamScoreboard {
   losses: number;
   score: number;
 }
-
-
 
 export enum StatAbbreviation {
   PTS = 'PTS',
@@ -79,128 +77,179 @@ export interface LeagueLeader {
 }
 
 export interface Boxscore {
-  gameId: string
-  gameTimeLocal: string
-  gameTimeUtc: string
-  gameTimeHome: string
-  gameTimeAway: string
-  gameEt: string
-  duration: number
-  gameCode: string
-  gameStatusText: string
-  gameStatus: GameStatus
-  regulationPeriods: number
-  period: number
-  gameClock: string
-  attendance: number
-  sellout: string
-  arena: Arena
-  officials: Official[]
-  homeTeam: HomeTeam
-  awayTeam: AwayTeam
+  gameId: string;
+  gameTimeLocal: string;
+  gameTimeUtc: string;
+  gameTimeHome: string;
+  gameTimeAway: string;
+  gameEt: string;
+  duration: number;
+  gameCode: string;
+  gameStatusText: string;
+  gameStatus: GameStatus;
+  regulationPeriods: number;
+  period: number;
+  gameClock: string;
+  attendance: number;
+  sellout: string;
+  arena: Arena;
+  officials: Official[];
+  homeTeam: BoxTeam;
+  awayTeam: BoxTeam;
 }
 
 export interface Arena {
-  arenaId: number
-  arenaName: string
-  arenaCity: string
-  arenaState: string
-  arenaCountry: string
-  arenaTimezone: string
+  arenaId: string;
+  arenaName: string;
+  arenaCity: string;
+  arenaState: string;
+  arenaCountry: string;
+  arenaTimezone: string;
 }
 
 export interface Official {
-  personId: number
-  name: string
-  nameI: string
-  firstName: string
-  familyName: string
-  jerseyNum: string
-  assignment: string
+  personId: string;
+  name: string;
+  nameI: string;
+  firstName: string;
+  familyName: string;
+  jerseyNum: string;
+  assignment: string;
 }
 
-export interface HomeTeam {
-  teamId: number
-  teamName: string
-  teamCity: string
-  teamTricode: string
-  score: number
-  inBonus: string
-  timeoutsRemaining: number
-  periods: Period[]
-  players: Player[]
-  statistics: Statistics
+export interface BoxTeam {
+  teamId: string;
+  teamName: string;
+  teamCity: string;
+  teamTricode: string;
+  score: number;
+  inBonus: string;
+  timeoutsRemaining: number;
+  periods: Period[];
+  players: Player[];
+  statistics: StatisticsTeam;
 }
 
 export interface Period {
-  period: number
-  periodType: string
-  score: number
+  period: number;
+  periodType: string;
+  score: number;
 }
 
 export interface Player {
-  status: string
-  order: number
-  personId: number
-  jerseyNum: string
-  position?: string
-  starter: string
-  oncourt: string
-  played: string
-  statistics: Statistics
-  name: string
-  nameI: string
-  firstName: string
-  familyName: string
-  notPlayingReason?: string
-  notPlayingDescription?: string
+  status: string;
+  order: number;
+  personId: number;
+  jerseyNum: string;
+  position?: string;
+  starter: string;
+  oncourt: string;
+  played: string;
+  statistics: StatisticsPlayer;
+  name: string;
+  nameI: string;
+  firstName: string;
+  familyName: string;
+  notPlayingReason?: string;
+  notPlayingDescription?: string;
 }
 
-export interface Statistics {
+export interface StatisticsPlayer {
+  assists: number;
+  blocks: number;
+  blocksReceived: number;
+  fieldGoalsAttempted: number;
+  fieldGoalsMade: number;
+  fieldGoalsPercentage: number;
+  foulsOffensive: number;
+  foulsDrawn: number;
+  foulsPersonal: number;
+  foulsTechnical: number;
+  freeThrowsAttempted: number;
+  freeThrowsMade: number;
+  freeThrowsPercentage: number;
+  minus: number;
+  minutes: string;
+  minutesCalculated: string;
+  plus: number;
+  plusMinusPoints: number;
+  points: number;
+  pointsFastBreak: number;
+  pointsInThePaint: number;
+  pointsSecondChance: number;
+  reboundsDefensive: number;
+  reboundsOffensive: number;
+  reboundsTotal: number;
+  steals: number;
+  threePointersAttempted: number;
+  threePointersMade: number;
+  threePointersPercentage: number;
+  turnovers: number;
+  twoPointersAttempted: number;
+  twoPointersMade: number;
+  twoPointersPercentage: number;
+}
+
+export interface StatisticsTeam {
   assists: number
+  assistsTurnoverRatio: number
+  benchPoints: number
+  biggestLead: number
+  biggestLeadScore: string
+  biggestScoringRun: number
+  biggestScoringRunScore: string
   blocks: number
   blocksReceived: number
+  fastBreakPointsAttempted: number
+  fastBreakPointsMade: number
+  fastBreakPointsPercentage: number
   fieldGoalsAttempted: number
+  fieldGoalsEffectiveAdjusted: number
   fieldGoalsMade: number
   fieldGoalsPercentage: number
   foulsOffensive: number
   foulsDrawn: number
   foulsPersonal: number
+  foulsTeam: number
   foulsTechnical: number
+  foulsTeamTechnical: number
   freeThrowsAttempted: number
   freeThrowsMade: number
   freeThrowsPercentage: number
-  minus: number
+  leadChanges: number
   minutes: string
   minutesCalculated: string
-  plus: number
-  plusMinusPoints: number
   points: number
+  pointsAgainst: number
   pointsFastBreak: number
+  pointsFromTurnovers: number
   pointsInThePaint: number
+  pointsInThePaintAttempted: number
+  pointsInThePaintMade: number
+  pointsInThePaintPercentage: number
   pointsSecondChance: number
   reboundsDefensive: number
   reboundsOffensive: number
+  reboundsPersonal: number
+  reboundsTeam: number
+  reboundsTeamDefensive: number
+  reboundsTeamOffensive: number
   reboundsTotal: number
+  secondChancePointsAttempted: number
+  secondChancePointsMade: number
+  secondChancePointsPercentage: number
   steals: number
   threePointersAttempted: number
   threePointersMade: number
   threePointersPercentage: number
+  timeLeading: string
+  timesTied: number
+  trueShootingAttempts: number
+  trueShootingPercentage: number
   turnovers: number
+  turnoversTeam: number
+  turnoversTotal: number
   twoPointersAttempted: number
   twoPointersMade: number
   twoPointersPercentage: number
-}
-
-export interface AwayTeam {
-  teamId: number
-  teamName: string
-  teamCity: string
-  teamTricode: string
-  score: number
-  inBonus: string
-  timeoutsRemaining: number
-  periods: Period[]
-  players: Player[]
-  statistics: Statistics
 }
