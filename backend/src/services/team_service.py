@@ -1,6 +1,5 @@
 from http.client import HTTPException
 from typing import List
-from src.models.camelize import CamelModel
 from pydantic import TypeAdapter
 from nba_api.stats.endpoints.teamdetails import TeamDetails
 from nba_api.stats.endpoints.teaminfocommon import TeamInfoCommon
@@ -20,7 +19,7 @@ async def get_team_details(team_id: str) -> TeamDetails:
 async def get_team_by_id(team_id: str) -> TeamCommon:
     team = TeamInfoCommon(team_id).get_normalized_dict()[
         'TeamInfoCommon'][0]
-    if(team):
+    if (team):
         return TeamCommon(**team)
     else:
         raise HTTPException(status_code=404, detail="Item not found")

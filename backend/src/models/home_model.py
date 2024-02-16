@@ -12,6 +12,7 @@ class GameStatus(Enum):
     PLAYING = 2
     ENDED = 3
 
+
 class StatCategoryAbbreviation:
     pts = 'PTS'
     fgm = 'FGM'
@@ -51,8 +52,10 @@ class GameScoreboard(CamelModel):
     home_team: TeamSB
     away_team: TeamSB
 
+
 class GameScoreboardList(RootModel):
     root: List[GameScoreboard]
+
 
 class Arena(CamelModel):
     arena_id: int
@@ -230,5 +233,3 @@ class BoxscoreModel(CamelModel):
     officials: List[Official]
     home_team: BoxTeam
     away_team: BoxTeam
-
-

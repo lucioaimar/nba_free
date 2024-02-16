@@ -1,13 +1,14 @@
 from fastapi import FastAPI
 # CORS
 from fastapi.middleware.cors import CORSMiddleware
-from src.routes import team_routes, player_routes, home_routes
+from src.routes import team_routes, player_routes, home_routes, game_routes
 
 app = FastAPI()
 
 app.include_router(team_routes.router)
 app.include_router(player_routes.router)
 app.include_router(home_routes.router)
+app.include_router(game_routes.router)
 
 origins = [
     "http://localhost",

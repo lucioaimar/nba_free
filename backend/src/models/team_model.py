@@ -1,4 +1,4 @@
-from typing import Any, List, Optional 
+from typing import Any, List, Optional
 from src.models.camelize import CamelModel
 
 
@@ -28,8 +28,6 @@ class TeamCommon(CamelModel):
     DIV_RANK: int
     MIN_YEAR: int
     MAX_YEAR: int
-
-
 
 
 class TeamBackgroundItem(CamelModel):
@@ -96,4 +94,3 @@ class TeamDetailsModel(CamelModel):
     team_awards_div: List[TeamAwardsDivItem]
     team_hof: List[TeamHofItem]
     team_retired: List[TeamRetiredItem]
-

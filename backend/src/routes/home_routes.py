@@ -1,4 +1,3 @@
-from typing import List
 from fastapi import APIRouter
 from src.models.home_model import GameScoreboardList
 from src.services.home_service import get_scoreboard_games, get_boxscore, get_league_leaders
@@ -23,5 +22,5 @@ async def boxscore_by_game(game_id: str):
 
 @router.get("/league_leaders")
 async def league_leaders(stat_category: str = 'PTS', top: int = 10,
-                             per_mode: str = 'PerGame'):
+                         per_mode: str = 'PerGame'):
     return get_league_leaders(stat_category, top, per_mode)

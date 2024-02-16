@@ -1,6 +1,6 @@
 from typing import List
-from nba_api.live.nba.endpoints.scoreboard import ScoreBoard 
-from nba_api.live.nba.endpoints.boxscore import BoxScore 
+from nba_api.live.nba.endpoints.scoreboard import ScoreBoard
+from nba_api.live.nba.endpoints.boxscore import BoxScore
 from nba_api.stats.endpoints.leagueleaders import LeagueLeaders
 from humps import decamelize
 
@@ -21,7 +21,7 @@ def get_boxscore(game_id: str):
 
 
 def get_league_leaders(stat_category: StatCategoryAbbreviation, top: int,
-                             per_mode: str):
+                       per_mode: str):
     leaders: List = LeagueLeaders(
         stat_category_abbreviation=stat_category,
         per_mode48=per_mode
