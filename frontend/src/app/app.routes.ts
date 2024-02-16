@@ -9,4 +9,8 @@ export const routes: Routes = [
     path: 'boxscore',
     loadComponent: () => import('./features/home/pages/boxscore/boxscore.page').then( m => m.BoxscorePage)
   },
+  {
+    path: 'games',
+    loadComponent: () => import('./features/games/pages/games/games.page').then( m => m.GamesPage)
+  },
 ];
