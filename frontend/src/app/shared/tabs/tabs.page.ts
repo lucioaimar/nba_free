@@ -23,7 +23,7 @@ import {
         <ion-icon aria-hidden="true" name="home-outline"></ion-icon>
         <ion-label>Home</ion-label>
       </ion-tab-button>
-      <ion-tab-button tab="team" href="/tabs/team">
+      <ion-tab-button tab="games" href="/tabs/games">
         <ion-icon aria-hidden="true" name="basketball-outline"></ion-icon>
         <ion-label>Games</ion-label>
       </ion-tab-button>

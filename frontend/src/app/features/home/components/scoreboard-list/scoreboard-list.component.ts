@@ -7,6 +7,7 @@ import {
   ViewChild,
   inject,
   input,
+  viewChild,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
@@ -38,7 +39,7 @@ import { SwiperContainer } from 'swiper/element';
 })
 export class ScoreboardListComponent {
   scoreboardList = input<Scoreboard[]>([]);
-  @ViewChild('swiperRef') swiperRef!: ElementRef<SwiperContainer>;
+  swiperRef = viewChild.required<ElementRef<SwiperContainer>>('swiperRef');
 
   swiperConfig: SwiperOptions = {
     spaceBetween: 10,

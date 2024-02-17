@@ -11,7 +11,7 @@ import { LogoComponent } from 'src/app/shared/components/logo/logo.component';
           <app-logo [teamId]="team().teamId" [teamName]="team().teamName" [width]="24" [height]="24" />
           <span class="text-xs whitespace-nowrap">
             {{ team().wins }} -
-            {{ team().wins }}
+            {{ team().losses }}
           </span>
         </div>
         <span class="text-lg font-bold ml-2"> {{ team().teamTricode }} </span>

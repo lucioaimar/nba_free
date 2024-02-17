@@ -25,7 +25,9 @@ import { StatsTableComponent } from '../stats-table/stats-table.component';
         </div>
       </div>
     </div>
-    <app-periods [homePeriods]="homeTeam().periods" [awayPeriods]="awayTeam().periods" [homeTeamCode]="homeTeam().teamTricode" [awayTeamCode]="awayTeam().teamTricode" />
+    <div class="flex w-full justify-center">
+      <app-periods [homePeriods]="homeTeam().periods" [awayPeriods]="awayTeam().periods" [homeTeamCode]="homeTeam().teamTricode" [awayTeamCode]="awayTeam().teamTricode" />
+    </div>
 
     <app-stats-table [teamId]="homeTeam().teamId" [teamName]="homeTeam().teamName" [players]="homeTeam().players" [isGameActive]="isGameActive()"/>
     <app-stats-table [teamId]="awayTeam().teamId" [teamName]="awayTeam().teamName" [players]="awayTeam().players" [isGameActive]="isGameActive()"/>
