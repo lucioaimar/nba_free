@@ -14,7 +14,7 @@ import { RouterLink } from '@angular/router';
         {{ game().gameDateTimeUtc | date : 'shortTime' }}
       </h4>
       <section class="flex items-center mb-2">
-        <app-logo [teamId]="game().awayTeam.teamId" [height]="50" [width]="50" />
+        <app-logo [teamId]="game().awayTeam.teamId" [width]="50" />
         <div class="flex flex-col ml-2">
           <h5 class="text-xl font-semibold">
             {{awayTeamName()}}
@@ -26,7 +26,7 @@ import { RouterLink } from '@angular/router';
         <div class="text-medium text-3xl ml-auto">{{game().awayTeam.score}}</div>
       </section>
       <section class="flex items-center ">
-        <app-logo [teamId]="game().homeTeam.teamId" [height]="50" [width]="50" />
+        <app-logo [teamId]="game().homeTeam.teamId" [width]="50" />
         <div class="flex flex-col ml-2">
           <h5 class="text-xl font-semibold">
             {{homeTeamName()}}

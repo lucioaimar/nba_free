@@ -14,12 +14,12 @@ import { StatsTableComponent } from '../stats-table/stats-table.component';
         <p class="font-semibold">
           {{ awayTeam().teamName }}
         </p>
-        <app-logo [teamId]="awayTeam().teamId" [width]="64" [height]="64" />
+        <app-logo [teamId]="awayTeam().teamId" [width]="64" />
         <p class=" text-2xl font-bold">{{ awayTeam().score }}</p>
       </div>
       <div class="flex gap-2 items-center">
         <p class="text-2xl font-bold">{{ homeTeam().score }}</p>
-        <app-logo [teamId]="homeTeam().teamId" [width]="64" [height]="64" />
+        <app-logo [teamId]="homeTeam().teamId" [width]="64" />
         <div class="font-semibold">
           {{ homeTeam().teamName }}
         </div>

@@ -4,7 +4,8 @@ from nba_api.live.nba.endpoints.boxscore import BoxScore
 from nba_api.stats.endpoints.leagueleaders import LeagueLeaders
 from humps import decamelize
 
-from src.models.home_model import GameScoreboardList, StatCategoryAbbreviation, BoxscoreModel
+from src.models.home_model import (
+    GameScoreboardList, StatCategoryAbbreviation, BoxscoreModel)
 
 
 def get_scoreboard_games() -> GameScoreboardList:

@@ -1,5 +1,6 @@
 import { IMAGE_LOADER, ImageLoaderConfig, NgOptimizedImage } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
+import { getSizeWithAspectRatio } from '../../utils/image.utils';
 
 @Component({
   selector: 'app-logo',
@@ -20,7 +21,9 @@ export class LogoComponent {
 
   width = input.required<number>();
 
-  height = input.required<number>();
+  height = computed<number>(() => {
+    return getSizeWithAspectRatio(this.width(), 1).height
+  })
 
   teamName = input<string>('');
 

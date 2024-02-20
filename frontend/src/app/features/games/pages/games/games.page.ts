@@ -17,12 +17,14 @@ import { GameListComponent } from '../../components/game-list/game-list.componen
 import { CalendarComponent } from 'src/app/shared/components/calendar/calendar.component';
 import { SpinnerComponent } from 'src/app/shared/components/spinner/spinner.component';
 import { EmptyMessageComponent } from 'src/app/shared/components/empty-message/empty-message.component';
+import { HeaderComponent } from 'src/app/shared/components/header/header.component';
 
 @Component({
   selector: 'app-games',
   standalone: true,
   template: `
-    <div class="overflow-auto">
+    <app-header title="Header"></app-header>
+    <ion-content>
       <app-calendar [(selectedDate)]="day" />
       @if(gameSchedule() && !loading() && !empty()){
       <app-game-list [schedules]="gameSchedule()" />
@@ -31,7 +33,7 @@ import { EmptyMessageComponent } from 'src/app/shared/components/empty-message/e
       } @else if (empty()){
       <app-empty-message label="games" />
       }
-    </div>
+    </ion-content>
   `,
   imports: [
     IonicModule,
@@ -41,6 +43,7 @@ import { EmptyMessageComponent } from 'src/app/shared/components/empty-message/e
     CalendarComponent,
     SpinnerComponent,
     EmptyMessageComponent,
+    HeaderComponent,
   ],
 })
 export class GamesPage {

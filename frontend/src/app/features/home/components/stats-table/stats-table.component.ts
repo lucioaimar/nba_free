@@ -23,7 +23,7 @@ import { StatTableHeaderComponent } from './stat-table-header/stat-table-header.
     <ion-card>
       <div class="flex justify-between p-4">
         <div class="flex gap-2">
-          <app-logo [teamId]="teamId()" [width]="24" [height]="24" />
+          <app-logo [teamId]="teamId()" [width]="24"/>
           <span class="text-xl">{{teamName()}}</span>
         </div>
         <ion-toggle [checked]="allStats()" (ionChange)="toggleStats()">All stats</ion-toggle>

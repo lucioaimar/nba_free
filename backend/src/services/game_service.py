@@ -2,7 +2,7 @@ from datetime import datetime
 import requests
 from humps import decamelize
 
-from src.models.game_model import Schedule, ScheduleGameList, ScheduleList
+from src.models.game_model import ScheduleGameList, ScheduleList
 
 url = "https://cdn.nba.com/static/json/staticData/scheduleLeagueV2.json"
 date_format = "%m/%d/%Y %H:%M:%S"

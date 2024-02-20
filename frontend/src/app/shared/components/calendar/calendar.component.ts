@@ -2,15 +2,13 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   Component,
   ElementRef,
-  EventEmitter,
-  Output,
   computed,
   effect,
   model,
   signal,
   viewChild,
 } from '@angular/core';
-import { createDateSequence, isSameDay, isToday } from 'src/app/utils/date.utils';
+import { createDateSequence, isSameDay } from 'src/app/shared/utils/date.utils';
 import { DatePipe, NgClass } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { SwiperOptions } from 'swiper/types';

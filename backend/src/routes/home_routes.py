@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 from src.models.home_model import GameScoreboardList
-from src.services.home_service import get_scoreboard_games, get_boxscore, get_league_leaders
+from src.services.home_service import (
+    get_scoreboard_games, get_boxscore, get_league_leaders)
 
 router = APIRouter(
     prefix="/home",
