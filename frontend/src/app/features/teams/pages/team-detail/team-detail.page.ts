@@ -1,5 +1,4 @@
 import { Component, Signal, computed, effect, inject } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
 import { TeamService } from '../../services/team.service';
 import { ActivatedRoute } from '@angular/router';
 import { TeamDetails, TeamInfo } from '../../entities/team.entities';
@@ -10,11 +9,13 @@ import { NgClass } from '@angular/common';
 import { getBackgroundColorTeam } from 'src/app/shared/utils/color.utils';
 
 @Component({
-  selector: 'app-team-detail',
+  selector: 'fnba-team-detail',
+  standalone: true,
+  imports: [LogoComponent, ShirtComponent, NgClass],
   template: `
     @if (team(); as team) {
     <div class="h-32 w-full flex" [ngClass]="bgTeam()">
-      <app-logo
+      <fnba-logo
         [teamId]="team.teamId"
         [width]="100"
       />
@@ -32,11 +33,10 @@ import { getBackgroundColorTeam } from 'src/app/shared/utils/color.utils';
     @if(teamDetails(); as teamDetails){
       <div>
       </div>
-      <app-shirt number="12" />
+      <fnba-shirt number="12" />
     }
   `,
-  standalone: true,
-  imports: [IonicModule, LogoComponent, ShirtComponent, NgClass],
+  
 })
 export class TeamDetailPage {
   activatedRoute = inject(ActivatedRoute);

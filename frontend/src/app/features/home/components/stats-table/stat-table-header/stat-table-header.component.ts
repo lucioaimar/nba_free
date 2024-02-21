@@ -1,7 +1,7 @@
 import { Component, InputSignal, OnInit, computed, input } from '@angular/core';
 
 @Component({
-  selector: 'app-stat-table-header, tr[app-stat-table-header]',
+  selector: 'fnba-stat-table-header, tr[fnba-stat-table-header]',
   standalone: true,
   template: `
     @for (stat of stats(); track $index) {

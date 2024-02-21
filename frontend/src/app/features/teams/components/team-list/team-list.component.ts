@@ -1,12 +1,14 @@
 import { Component, OnInit, computed, input } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import { IonCard } from '@ionic/angular/standalone';
 import { TeamSimple } from '../../entities/team.entities';
 import { LogoComponent } from 'src/app/shared/components/logo/logo.component';
 import { RouterLink } from '@angular/router';
 import { NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-team-list',
+  selector: 'fnba-team-list',
+  standalone: true,
+  imports: [IonCard, LogoComponent, RouterLink, NgClass],
   template: `
     <div class="flex flex-col gap-2 my-2">
       @for(team of teamList(); track $index){
@@ -16,7 +18,7 @@ import { NgClass } from '@angular/common';
         [ngClass]="'bg'"
       >
         <div class="flex gap-4 items-center">
-          <app-logo
+          <fnba-logo
             [teamId]="team.id.toString()"
             [teamName]="team.fullName"
             [width]="50"
@@ -26,9 +28,7 @@ import { NgClass } from '@angular/common';
       </ion-card>
       }
     </div>
-  `,
-  standalone: true,
-  imports: [IonicModule, LogoComponent, RouterLink, NgClass],
+  `
 })
 export class TeamListComponent {
   teamList = input<TeamSimple[]>([]);

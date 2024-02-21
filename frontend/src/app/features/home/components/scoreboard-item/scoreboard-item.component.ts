@@ -1,23 +1,18 @@
 import {
   Component,
-  Input,
-  OnInit,
-  Signal,
-  WritableSignal,
-  computed,
-  inject,
-  input,
-  signal,
+  input
 } from '@angular/core';
 import { Scoreboard, GameStatus } from '../../entities/home.entities';
-import { IonicModule } from '@ionic/angular';
+import { IonCard } from '@ionic/angular/standalone';
 import { DatePipe } from '@angular/common';
 import { ScoreboardTeamComponent } from '../scoreboard-team/scoreboard-team.component';
 import { PlayingTimePipe } from 'src/app/shared/pipes/playing-time.pipe';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-scoreboard-item',
+  selector: 'fnba-scoreboard-item',
+  standalone: true,
+  imports: [IonCard, ScoreboardTeamComponent, PlayingTimePipe, DatePipe, RouterLink],
   template: `
     <ion-card class="ion-padding m-0 h-44" [routerLink]="['boxscore', scoreboard().gameId]">
       <header class="mb-2">
@@ -36,13 +31,11 @@ import { RouterLink } from '@angular/router';
           }
         }
       </header>
-      <app-scoreboard-team [team]="scoreboard().awayTeam" />
+      <fnba-scoreboard-team [team]="scoreboard().awayTeam" />
       <div class="text-center w-full">&#64;</div>
-      <app-scoreboard-team [team]="scoreboard().homeTeam" />
+      <fnba-scoreboard-team [team]="scoreboard().homeTeam" />
     </ion-card>
-  `,
-  standalone: true,
-  imports: [IonicModule, ScoreboardTeamComponent, PlayingTimePipe, DatePipe, RouterLink],
+  `
 })
 export class ScoreboardItemComponent {
 

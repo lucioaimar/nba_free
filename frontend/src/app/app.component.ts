@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 
 @Component({
-  selector: 'app-root',
+  selector: 'fnba-root',
   template: `
     <ion-app>
       <ion-router-outlet></ion-router-outlet>

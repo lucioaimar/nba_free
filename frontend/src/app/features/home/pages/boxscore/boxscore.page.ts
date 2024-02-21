@@ -1,15 +1,11 @@
 import {
   Component,
-  OnInit,
   Signal,
-  computed,
-  effect,
-  inject,
-  signal,
+  inject
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { IonContent } from '@ionic/angular/standalone';
 import { ActivatedRoute } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import {
@@ -25,17 +21,17 @@ import { HeaderComponent } from 'src/app/shared/components/header/header.compone
 import { VersusComponent } from '../../components/versus/versus.component';
 
 @Component({
-  selector: 'app-boxscore',
+  selector: 'fnba-boxscore',
+  standalone: true,
+  imports: [IonContent, CommonModule, FormsModule, HeaderComponent, VersusComponent],
   template: `
-    <app-header title="Boxscore"></app-header>
+    <fnba-header title="Boxscore"></fnba-header>
     <ion-content class="gap-5">
       @if(boxscore(); as boxscore){
-        <app-versus [homeTeam]="boxscore.homeTeam" [awayTeam]="boxscore.awayTeam" [isGameActive]="boxscore.gameStatus === gameStatus.PLAYING"/>
+        <fnba-versus [homeTeam]="boxscore.homeTeam" [awayTeam]="boxscore.awayTeam" [isGameActive]="boxscore.gameStatus === gameStatus.PLAYING"/>
       }
     </ion-content>
-  `,
-  standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, HeaderComponent, VersusComponent],
+  `
 })
 export class BoxscorePage {
   private activatedRoute = inject(ActivatedRoute);

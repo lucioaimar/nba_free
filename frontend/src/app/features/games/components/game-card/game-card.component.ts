@@ -1,20 +1,20 @@
 import { Component, computed, input } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
 import { ScheduleGame } from '../../entities/games.entities';
 import { DatePipe } from '@angular/common';
 import { LogoComponent } from 'src/app/shared/components/logo/logo.component';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-game-card',
+  selector: 'fnba-game-card',
   standalone: true,
+  imports: [DatePipe, LogoComponent, RouterLink],
   template: `
     <div class="px-2 py-4" [routerLink]="['/tabs/home', 'boxscore', game().gameId]">
       <h4 class="mb-2">
         {{ game().gameDateTimeUtc | date : 'shortTime' }}
       </h4>
       <section class="flex items-center mb-2">
-        <app-logo [teamId]="game().awayTeam.teamId" [width]="50" />
+        <fnba-logo [teamId]="game().awayTeam.teamId" [width]="50" />
         <div class="flex flex-col ml-2">
           <h5 class="text-xl font-semibold">
             {{awayTeamName()}}
@@ -26,7 +26,7 @@ import { RouterLink } from '@angular/router';
         <div class="text-medium text-3xl ml-auto">{{game().awayTeam.score}}</div>
       </section>
       <section class="flex items-center ">
-        <app-logo [teamId]="game().homeTeam.teamId" [width]="50" />
+        <fnba-logo [teamId]="game().homeTeam.teamId" [width]="50" />
         <div class="flex flex-col ml-2">
           <h5 class="text-xl font-semibold">
             {{homeTeamName()}}
@@ -38,8 +38,7 @@ import { RouterLink } from '@angular/router';
         <div class="text-medium text-3xl ml-auto">{{game().awayTeam.score}}</div>
       </section>
     </div>
-  `,
-  imports: [IonicModule, DatePipe, LogoComponent, RouterLink],
+  `
 })
 export class GameCardComponent {
   game = input.required<ScheduleGame>();

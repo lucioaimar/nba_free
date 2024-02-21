@@ -7,8 +7,9 @@ import { Component, computed, effect, input } from '@angular/core';
 import { getSizeWithAspectRatio } from '../../utils/image.utils';
 
 @Component({
-  selector: 'app-headshot',
+  selector: 'fnba-headshot',
   standalone: true,
+  imports: [NgOptimizedImage],
   template: `<img
     [ngSrc]="playerId()"
     [alt]="playerName() + ' headshot'"
@@ -25,7 +26,6 @@ import { getSizeWithAspectRatio } from '../../utils/image.utils';
       },
     },
   ],
-  imports: [NgOptimizedImage],
 })
 export class HeadshotComponent {
   playerId = input.required<string>();

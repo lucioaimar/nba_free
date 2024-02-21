@@ -1,9 +1,11 @@
 import { Component, input } from '@angular/core';
 import { LeagueLeader } from '../../entities/home.entities';
-import { IonicModule } from '@ionic/angular';
+import { IonCard } from '@ionic/angular/standalone';
 
 @Component({
-  selector: 'app-league-leaders',
+  selector: 'fnba-league-leaders',
+  standalone: true,
+  imports: [IonCard],
   template: `
       <ion-card class="ion-padding m-0">
         <h6 class=" text-lg font-semibold mb-2">
@@ -23,9 +25,7 @@ import { IonicModule } from '@ionic/angular';
           }
         </table>
       </ion-card>
-  `,
-  standalone: true,
-  imports: [IonicModule],
+  `
 })
 export class LeagueLeadersComponent {
   title = input<string>('');

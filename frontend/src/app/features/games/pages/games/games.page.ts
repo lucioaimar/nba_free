@@ -7,7 +7,7 @@ import {
   signal,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
+import { IonContent } from '@ionic/angular/standalone';
 import { GamesService } from '../../services/games.service';
 import { Schedule } from '../../entities/games.entities';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
@@ -20,23 +20,10 @@ import { EmptyMessageComponent } from 'src/app/shared/components/empty-message/e
 import { HeaderComponent } from 'src/app/shared/components/header/header.component';
 
 @Component({
-  selector: 'app-games',
+  selector: 'fnba-games',
   standalone: true,
-  template: `
-    <app-header title="Header"></app-header>
-    <ion-content>
-      <app-calendar [(selectedDate)]="day" />
-      @if(gameSchedule() && !loading() && !empty()){
-      <app-game-list [schedules]="gameSchedule()" />
-      } @else if (loading()) {
-      <app-spinner label="Loading games..." [size]="100" />
-      } @else if (empty()){
-      <app-empty-message label="games" />
-      }
-    </ion-content>
-  `,
   imports: [
-    IonicModule,
+    IonContent,
     CommonModule,
     GameCardComponent,
     GameListComponent,
@@ -45,6 +32,19 @@ import { HeaderComponent } from 'src/app/shared/components/header/header.compone
     EmptyMessageComponent,
     HeaderComponent,
   ],
+  template: `
+    <fnba-header title="Header"></fnba-header>
+    <ion-content>
+      <fnba-calendar [(selectedDate)]="day" />
+      @if(gameSchedule() && !loading() && !empty()){
+      <fnba-game-list [schedules]="gameSchedule()" />
+      } @else if (loading()) {
+      <fnba-spinner label="Loading games..." [size]="100" />
+      } @else if (empty()){
+      <fnba-empty-message label="games" />
+      }
+    </ion-content>
+  `
 })
 export class GamesPage {
   gameService = inject(GamesService);

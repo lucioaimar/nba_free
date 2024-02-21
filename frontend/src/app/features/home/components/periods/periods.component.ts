@@ -2,7 +2,7 @@ import { Component, InputSignal, OnInit, computed, input } from '@angular/core';
 import { Period } from '../../entities/home.entities';
 
 @Component({
-  selector: 'app-periods',
+  selector: 'fnba-periods',
   standalone: true,
   template: `
     <table>

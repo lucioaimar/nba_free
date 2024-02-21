@@ -2,7 +2,9 @@ import { NgStyle } from '@angular/common';
 import { Component, InputSignal, Signal, input } from '@angular/core';
 
 @Component({
-  selector: 'app-shirt',
+  selector: 'fnba-shirt',
+  standalone: true,
+  imports: [NgStyle],
   template: `
     <svg
       [attr.height]="size()"
@@ -45,8 +47,6 @@ import { Component, InputSignal, Signal, input } from '@angular/core';
       </g>
     </svg>
   `,
-  standalone: true,
-  imports: [NgStyle],
 })
 export class ShirtComponent {
   defaultColor: ColorOptions = {

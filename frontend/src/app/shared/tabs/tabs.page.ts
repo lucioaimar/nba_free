@@ -16,7 +16,9 @@ import {
 } from 'ionicons/icons';
 
 @Component({
-  selector: 'app-tabs',
+  selector: 'fnba-tabs',
+  standalone: true,
+  imports: [IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel],
   template: `<ion-tabs>
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="home" href="/tabs/home">
@@ -40,9 +42,7 @@ import {
         <ion-label>Standings</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
-  </ion-tabs> `,
-  standalone: true,
-  imports: [IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel],
+  </ion-tabs> `
 })
 export class TabsPage {
   public environmentInjector = inject(EnvironmentInjector);

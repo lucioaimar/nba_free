@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { createDateSequence, isSameDay } from 'src/app/shared/utils/date.utils';
 import { DatePipe, NgClass } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
+import { IonCard, IonModal } from '@ionic/angular/standalone';
 import { SwiperOptions } from 'swiper/types';
 import { SwiperContainer } from 'swiper/element';
 import { SwiperDirective } from '../../directives/swiper.directive';
@@ -18,8 +18,9 @@ import { calendarOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 
 @Component({
-  selector: 'app-calendar',
+  selector: 'fnba-calendar',
   standalone: true,
+  imports: [SwiperDirective, DatePipe, IonCard, IonModal, NgClass],
   template: `
     <div class="flex h-16">
       <swiper-container
@@ -69,7 +70,6 @@ import { addIcons } from 'ionicons';
       </ng-template>
     </ion-modal>
   `,
-  imports: [SwiperDirective, DatePipe, IonicModule, NgClass],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class CalendarComponent {
@@ -96,8 +96,7 @@ export class CalendarComponent {
   });
 
   setSelectedDate(date: Date | string | string[]) {
-    if(Array.isArray(date))
-      return;
+    if (Array.isArray(date)) return;
     const d = new Date(date);
     this.selectedDate.set(d);
   }

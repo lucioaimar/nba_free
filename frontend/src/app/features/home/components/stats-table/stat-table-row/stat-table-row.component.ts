@@ -3,8 +3,9 @@ import { PlayingTimePipe } from 'src/app/shared/pipes/playing-time.pipe';
 import { StatisticsPlayer } from '../../../entities/home.entities';
 
 @Component({
-  selector: 'app-stat-table-row, tr[app-stat-table-row]',
+  selector: 'fnba-stat-table-row, tr[fnba-stat-table-row]',
   standalone: true,
+  imports: [PlayingTimePipe],
   template: ` <td class="text-center td-padding whitespace-nowrap">
       {{ stats().minutes | playingTime }}
     </td>
@@ -50,8 +51,7 @@ import { StatisticsPlayer } from '../../../entities/home.entities';
     }
     <td class="text-center td-padding whitespace-nowrap">
       {{ stats().points }}
-    </td>`,
-  imports: [PlayingTimePipe],
+    </td>`
 })
 export class StatTableRowComponent {
   stats: InputSignal<StatisticsPlayer> = input.required();

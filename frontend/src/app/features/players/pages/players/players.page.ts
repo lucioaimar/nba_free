@@ -1,21 +1,21 @@
 import { Component, inject } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import { IonContent } from '@ionic/angular/standalone';
 import { HeaderComponent } from 'src/app/shared/components/header/header.component';
 import { PlayersService } from '../../services/players.service';
 import { PlayerItemComponent } from '../../components/player-item/player-item.component';
 
 @Component({
-  selector: 'app-players',
+  selector: 'fnba-players',
   standalone: true,
+  imports: [IonContent, HeaderComponent, PlayerItemComponent],
   template: `
-    <app-header title="Players"></app-header>
+    <fnba-header title="Players"></fnba-header>
     <ion-content>
       @for (player of playerList(); track $index) {
-        <app-player-item [player]="player" />
+        <fnba-player-item [player]="player" />
       }
     </ion-content>
   `,
-  imports: [IonicModule, HeaderComponent, PlayerItemComponent],
 })
 export class PlayersPage {
   playerService = inject(PlayersService);

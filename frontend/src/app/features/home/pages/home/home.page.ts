@@ -1,6 +1,6 @@
 import { Component, Signal, inject } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
+import { IonContent } from '@ionic/angular/standalone';
 import { HomeService } from '../../services/home.service';
 import {
   LeagueLeader,
@@ -13,23 +13,39 @@ import { LeagueLeadersComponent } from '../../components/league-leaders/league-l
 import { HeaderComponent } from 'src/app/shared/components/header/header.component';
 
 @Component({
-  selector: 'app-home',
+  selector: 'fnba-home',
+  standalone: true,
+  imports: [
+    IonContent,
+    NgOptimizedImage,
+    CommonModule,
+    ScoreboardListComponent,
+    LeagueLeadersComponent,
+    HeaderComponent,
+  ],
   template: `
-    <app-header title="Home"></app-header>
+    <fnba-header title="Home"></fnba-header>
     <ion-content class="ion-padding gap-5">
-      <app-scoreboard-list [scoreboardList]="scoreboardList()" />
-      <h2 class="my-5 text-xl font-semibold">
-        League Leaders
-      </h2>
+      <fnba-scoreboard-list [scoreboardList]="scoreboardList()" />
+      <h2 class="my-5 text-xl font-semibold">League Leaders</h2>
       <div class="flex flex-col gap-2">
-        <app-league-leaders title="Points Leaders" [leagueLeaders]="leagueLeadersPts()" />
-        <app-league-leaders title="Rebounds Leaders" category="REB" [leagueLeaders]="leagueLeadersReb()" />
-        <app-league-leaders title="Assists Leaders" category="AST" [leagueLeaders]="leagueLeadersAst()" />
+        <fnba-league-leaders
+          title="Points Leaders"
+          [leagueLeaders]="leagueLeadersPts()"
+        />
+        <fnba-league-leaders
+          title="Rebounds Leaders"
+          category="REB"
+          [leagueLeaders]="leagueLeadersReb()"
+        />
+        <fnba-league-leaders
+          title="Assists Leaders"
+          category="AST"
+          [leagueLeaders]="leagueLeadersAst()"
+        />
       </div>
     </ion-content>
   `,
-  standalone: true,
-  imports: [IonicModule, NgOptimizedImage, CommonModule, ScoreboardListComponent, LeagueLeadersComponent, HeaderComponent],
 })
 export class HomePage {
   private homeService = inject(HomeService);
