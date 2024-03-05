@@ -26,11 +26,11 @@ class Player(CamelModel):
     team_name: Optional[str]
     team_abbreviation: Optional[str]
     jersey_number: Optional[str]
-    position: str
-    height: str
-    weight: str
-    college: str
-    country: str
+    position: Optional[str]
+    height: Optional[str]
+    weight: Optional[str]
+    college: Optional[str]
+    country: Optional[str]
     draft_year: Optional[int]
     draft_round: Optional[int]
     draft_number: Optional[int]

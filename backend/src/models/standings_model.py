@@ -1,0 +1,103 @@
+from typing import List, Optional
+
+from pydantic import RootModel
+
+from src.models.camelize import CamelModel
+
+
+class Standing(CamelModel):
+    league_id: str
+    season_id: str
+    team_id: int
+    team_city: str
+    team_name: str
+    team_slug: str
+    conference: str
+    conference_record: str
+    playoff_rank: int
+    clinch_indicator: str
+    division: str
+    division_record: str
+    division_rank: int
+    wins: Optional[int]
+    losses: Optional[int]
+    win_pct: Optional[float]
+    league_rank: Optional[int]
+    record: Optional[str]
+    home: Optional[str]
+    road: Optional[str]
+    l10: Optional[str]
+    last10_home: Optional[str]
+    last10_road: Optional[str]
+    ot: Optional[str]
+    three_pts_or_less: Optional[str]
+    ten_pts_or_more: Optional[str]
+    long_home_streak: Optional[int]
+    str_long_home_streak: Optional[str]
+    long_road_streak: Optional[int]
+    str_long_road_streak: Optional[str]
+    long_win_streak: Optional[int]
+    long_loss_streak: Optional[int]
+    current_home_streak: Optional[int]
+    str_current_home_streak: Optional[str]
+    current_road_streak: Optional[int]
+    str_current_road_streak: Optional[str]
+    current_streak: Optional[int]
+    str_current_streak: Optional[str]
+    conference_games_back: Optional[float]
+    division_games_back: Optional[float]
+    clinched_conference_title: Optional[int]
+    clinched_division_title: Optional[int]
+    clinched_playoff_birth: Optional[int]
+    clinched_play_in: Optional[int]
+    eliminated_conference: Optional[int]
+    eliminated_division: Optional[int]
+    ahead_at_half: Optional[str]
+    behind_at_half: Optional[str]
+    tied_at_half: Optional[str]
+    ahead_at_third: Optional[str]
+    behind_at_third: Optional[str]
+    tied_at_third: Optional[str]
+    score100_pts: Optional[str]
+    opp_score100_pts: Optional[str]
+    opp_over500: Optional[str]
+    lead_in_fgpct: Optional[str]
+    lead_in_reb: Optional[str]
+    fewer_turnovers: Optional[str]
+    points_pg: Optional[float]
+    opp_points_pg: Optional[float]
+    diff_points_pg: Optional[float]
+    vs_east: Optional[str]
+    vs_atlantic: Optional[str]
+    vs_central: Optional[str]
+    vs_southeast: Optional[str]
+    vs_west: Optional[str]
+    vs_northwest: Optional[str]
+    vs_pacific: Optional[str]
+    vs_southwest: Optional[str]
+    jan: Optional[str]
+    feb: Optional[str]
+    mar: Optional[str]
+    apr: Optional[str]
+    may: Optional[str]
+    jun: Optional[str]
+    jul: Optional[str]
+    aug: Optional[str]
+    sep: Optional[str]
+    oct: Optional[str]
+    nov: Optional[str]
+    dec: Optional[str]
+    score_80__plus: str
+    opp__score_80__plus: str
+    score__below_80: str
+    opp__score__below_80: str
+    total_points: float
+    opp_total_points: float
+    diff_total_points: float
+    league_games_back: float
+    playoff_seeding: Optional[int]
+    clinched_post_season: int
+
+
+class StandingList(RootModel):
+    root: List[Standing]
