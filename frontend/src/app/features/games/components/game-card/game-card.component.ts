@@ -23,7 +23,9 @@ import { RouterLink } from '@angular/router';
             {{awayRecord()}}, Away
           </p>
         </div>
-        <div class="text-medium text-3xl ml-auto">{{game().awayTeam.score}}</div>
+        @if (showScore()) {
+          <div class="text-medium text-3xl ml-auto">{{game().awayTeam.score}}</div>
+        }
       </section>
       <section class="flex items-center ">
         <fnba-logo [teamId]="game().homeTeam.teamId" [width]="50" />
@@ -35,7 +37,9 @@ import { RouterLink } from '@angular/router';
             {{homeRecord()}}, Home
           </p>
         </div>
-        <div class="text-medium text-3xl ml-auto">{{game().awayTeam.score}}</div>
+        @if (showScore()) {
+          <div class="text-medium text-3xl ml-auto">{{game().awayTeam.score}}</div>
+        }
       </section>
     </div>
   `
@@ -57,5 +61,9 @@ export class GameCardComponent {
 
   homeRecord = computed(() => {
     return `${this.game().homeTeam.wins}-${this.game().homeTeam.losses}`
+  })
+
+  showScore = computed(() => {
+    return this.game().awayTeam.score + this.game().awayTeam.score > 0;
   })
 }

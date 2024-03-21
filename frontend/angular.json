@@ -127,7 +127,6 @@
   },
   "cli": {
     "schematicCollections": [
-      "@ionic/angular-toolkit",
       "@schematics/angular"
     ],
     "analytics": false
@@ -136,16 +135,9 @@
     "@schematics/angular:component":{
       "standalone": true,
       "inlineStyle": true,
-      "inlineTemplate": true
-    },
-    "@ionic/angular-toolkit:component": {
-      "styleext": "scss",
-      "standalone": true,
-      "inlineStyle": true,
-      "inlineTemplate": true
-    },
-    "@ionic/angular-toolkit:page": {
-      "styleext": "scss"
+      "inlineTemplate": true,
+      "prefix": "fnba",
+      "changeDetection": "OnPush"
     },
     "@angular-eslint/schematics:application": {
       "setParserOptionsProject": true

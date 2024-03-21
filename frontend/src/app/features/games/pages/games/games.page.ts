@@ -33,15 +33,13 @@ import { HeaderComponent } from 'src/app/shared/components/header/header.compone
     HeaderComponent,
   ],
   template: `
-    <fnba-header title="Header"></fnba-header>
+    <fnba-header title="Games"></fnba-header>
     <ion-content>
       <fnba-calendar [(selectedDate)]="day" />
-      @if(gameSchedule() && !loading() && !empty()){
+      @if(gameSchedule() && !loading()){
       <fnba-game-list [schedules]="gameSchedule()" />
       } @else if (loading()) {
       <fnba-spinner label="Loading games..." [size]="100" />
-      } @else if (empty()){
-      <fnba-empty-message label="games" />
       }
     </ion-content>
   `
@@ -61,13 +59,5 @@ export class GamesPage {
 
   gameSchedule: Signal<Schedule[]> = toSignal(this.schedule$, {
     initialValue: [],
-  });
-
-  empty = computed(() => {
-    return !this.loading() && this.gameSchedule().length === 0;
-  });
-
-  private ef = effect(() => {
-    console.log(this.empty());
   });
 }

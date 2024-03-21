@@ -24,7 +24,7 @@ import { addIcons } from 'ionicons';
   template: `
     <div class="flex h-16">
       <swiper-container
-        class="w-[85%] ml-0"
+        class="w-[calc(100%-64px)] ml-0"
         appSwiper
         #swiperRef
         [config]="swiperConfig"
@@ -32,7 +32,7 @@ import { addIcons } from 'ionicons';
         @for (date of dateList(); track $index) {
         <swiper-slide>
           <ion-card
-            class="rounded-sm m-1 p-2 text-center"
+            class="rounded-md m-1 p-2 text-center"
             [ngClass]="{
               'font-semibold border dark:border-white': activeIndex() === $index
             }"

@@ -5,6 +5,7 @@ import { PlayingTimePipe } from 'src/app/shared/pipes/playing-time.pipe';
 import { Player } from '../../entities/home.entities';
 import { StatTableRowComponent } from './stat-table-row/stat-table-row.component';
 import { StatTableHeaderComponent } from './stat-table-header/stat-table-header.component';
+import { HeadshotComponent } from 'src/app/shared/components/headshot/headshot.component';
 
 @Component({
   selector: 'fnba-stats-table',
@@ -16,6 +17,7 @@ import { StatTableHeaderComponent } from './stat-table-header/stat-table-header.
     LogoComponent,
     StatTableRowComponent,
     StatTableHeaderComponent,
+    HeadshotComponent
   ],
   template: `
     <ion-card>

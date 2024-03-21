@@ -139,7 +139,7 @@ export interface Period {
 export interface Player {
   status: string;
   order: number;
-  personId: number;
+  personId: string;
   jerseyNum: string;
   position?: string;
   starter: string;

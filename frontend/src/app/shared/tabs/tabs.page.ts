@@ -37,7 +37,7 @@ import {
         <ion-icon name="body-outline"></ion-icon>
         <ion-label>Players</ion-label>
       </ion-tab-button>
-      <ion-tab-button tab="standing">
+      <ion-tab-button tab="standings">
         <ion-icon name="podium-outline"></ion-icon>
         <ion-label>Standings</ion-label>
       </ion-tab-button>

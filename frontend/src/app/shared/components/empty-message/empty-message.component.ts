@@ -14,7 +14,7 @@ import { basketballOutline } from 'ionicons/icons';
       <p>
         There's no {{label()}} available
       </p>
-      <ion-icon name="basketball-outline" class="ml-2 text-3xl"></ion-icon>
+      <ion-icon name="basketball-outline" class="ml-2 leading-none text-3xl"></ion-icon>
     </section>
   `,
   
